@@ -3,14 +3,14 @@ Rails.application.configure do
 
   # Code is not reloaded between requests.
   config.cache_classes = true
-  config.action_mailer.default_url_options = { host: ' pinterestedlike.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'pinterested-like.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
       :address              => 'smtp.live.com',
       :port                 => 25,
       :domain               => 'hotmail.com',
-      :user_name            => ENV["HOTMAIL_USERNAME"],
-      :password             => ENV["HOTMAIL_PASSWORD"],
+      :user_name            => ENV['HOTMAIL_USERNAME'],
+      :password             => ENV['HOTMAIL_PASSWORD'],
       :authentication       => 'login',
       :enable_starttls_auto => true
   }
