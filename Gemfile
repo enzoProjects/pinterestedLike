@@ -62,7 +62,7 @@ end
 
 
 #mailer
-gem mailtrap
+gem 'mailtrap', '~> 0.2.1'
 
 
 #votos
