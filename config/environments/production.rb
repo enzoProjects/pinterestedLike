@@ -5,10 +5,6 @@ Rails.application.configure do
   config.cache_classes = true
 
 
-
-  require 'rest_client'
-  require 'json'
-
   response = RestClient.get "https://mailtrap.io/api/v1/inboxes.json?api_token=#{ENV['MAILTRAP_API_TOKEN']}"
 
   first_inbox = JSON.parse(response)[0] # get first inbox
