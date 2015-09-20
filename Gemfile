@@ -61,6 +61,10 @@ group :development, :test do
 end
 
 
+#mailer
+gem mailtrap
+
+
 #votos
 
 gem 'acts_as_votable'
