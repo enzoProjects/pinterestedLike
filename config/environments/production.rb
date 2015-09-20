@@ -3,8 +3,21 @@ Rails.application.configure do
 
   # Code is not reloaded between requests.
   config.cache_classes = true
+  config.action_mailer.default_url_options = { host: ' pinterestedlike.herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      :address              => 'smtp.live.com',
+      :port                 => 25,
+      :domain               => 'hotmail.com',
+      :user_name            => ENV["HOTMAIL_USERNAME"],
+      :password             => ENV["HOTMAIL_PASSWORD"],
+      :authentication       => 'login',
+      :enable_starttls_auto => true
+  }
 
-  # Eager load code on boot. This eager loads most of Rails and
+
+
+# Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
   # Rake tasks automatically ignore this option for performance.
@@ -76,4 +89,12 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  config.paperclip_defaults = {
+      :storage => :s3,
+      :s3_credentials => {
+          :bucket => ENV['AWS_BUCKET'],
+          :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+          :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+      }
+  }
 end
