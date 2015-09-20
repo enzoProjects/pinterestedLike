@@ -1,24 +1,20 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      :address              => 'smtp.live.com',
+      :port                 => 25,
+      :domain               => 'hotmail.com',
+      :user_name            => ENV["HOTMAIL_USERNAME"],
+      :password             => ENV["HOTMAIL_PASSWORD"],
+      :authentication       => 'login',
+      :enable_starttls_auto => true
+  }
+
 
   # Code is not reloaded between requests.
   config.cache_classes = true
-
-
-  response = RestClient.get "https://mailtrap.io/api/v1/inboxes.json?api_token=#{ENV['MAILTRAP_API_TOKEN']}"
-
-  first_inbox = JSON.parse(response)[0] # get first inbox
-
-  ActionMailer::Base.delivery_method = :smtp
-  ActionMailer::Base.smtp_settings = {
-      :user_name => first_inbox['username'],
-      :password => first_inbox['password'],
-      :address => first_inbox['domain'],
-      :domain => first_inbox['domain'],
-      :port => first_inbox['smtp_ports'][0],
-      :authentication => :plain
-  }
-
 
 
 
