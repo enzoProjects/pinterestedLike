@@ -6,6 +6,12 @@ gem 'rails', '4.2.4'
 
 
 
+#subir imagenes en s3 amazon
+gem 'aws-sdk', '~> 1.60.2'
+
+
+
+
 # database for heroku or pc
 group :development, :test do
       gem 'sqlite3'
