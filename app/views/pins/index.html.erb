@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<div id="pins" class="transitions-enabled">
+  <% @pins.each do |pin| %>
+      <div class="box ">
+        <div class="panel panel-default">
+
+          <%= link_to image_tag(pin.image.url(:medium)), pin %><br/>
+          <div class="panel-body">
+            <%= pin.description %><br/>
+
+            <%= link_to "", like_pin_path(pin), method: :put, class:'glyphicon glyphicon-thumbs-up' %>
+            <%= link_to "", dislike_pin_path(pin), method: :put, class:'glyphicon glyphicon-thumbs-down' %>
+
+            <%if  pin.get_upvotes.size - pin.get_downvotes.size < 5 %>
+                    <div class="bg-danger"><%=pin.get_upvotes.size - pin.get_downvotes.size%></div>
+            <%elsif pin.get_upvotes.size - pin.get_downvotes.size < 10  %>
+                    <div class="bg-info"><%=pin.get_upvotes.size - pin.get_downvotes.size%></div>
+            <%else%>
+                    <div class="bg-success"><%=pin.get_upvotes.size - pin.get_downvotes.size%></div>
+            <%end%>
+          </div>
+
+        </div>
+
+
+      </div>
+  <% end %>
+</div>
+

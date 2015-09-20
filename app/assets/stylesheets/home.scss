@@ -1,0 +1,42 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+
+
+.navbar {
+  font-family: 'Indie Flower', cursive;
+  font-size: 2em;
+  margin-bottom: 0px;
+}
+.navbar-brand {
+
+}
+.section-1
+{
+  margin: 0px;
+  padding: 0px;
+  height: auto;
+  border: 0px none;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  display: block;
+  background: transparent url("road.jpg") no-repeat fixed center center / cover;
+}
+.section-2
+{
+  margin: 0px;
+  padding: 0px;
+  height: auto;
+  border: 0px none;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  display: block;
+  background: #F5F5F5 url("grey.png") repeat scroll 0% 0%;
+}
+
+#github
+  {color: #333; background-color:transparent;
+  text-decoration:none;
+  font-size: 20px;
+  font: 20px/1.4 Helvetica,arial,nimbussansl,liberationsans,freesans,clean,sans-serif,"Segoe UI Emoji","Segoe UI Symbol"}

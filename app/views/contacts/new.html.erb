@@ -1,0 +1,26 @@
+<br/>
+<br/>
+<br/><br/>
+<div class="col-md-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">Contacto</div>
+    <div class="panel-body">
+      <%= simple_form_for @contact, url: contacts_url, as: 'contact' do |f| %>
+          <%= f.error_notification %>
+
+          <%= f.input :name, placeholder: 'Name' %>
+          <%= f.input :email, placeholder: 'Enter email' %>
+          <%= f.input :message, :as => :text, :required => true %>
+          <div class= "hidden">
+            <%= f.input :nickname, :hint => 'Leave this field blank!' %>
+          </div>
+
+
+
+          <%= f.button :submit, 'Send message', :class=> "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+  <br/><br/><br/><br/>
+</div>
+
