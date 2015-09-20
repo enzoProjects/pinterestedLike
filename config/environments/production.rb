@@ -6,8 +6,8 @@ Rails.application.configure do
       :address              => 'smtp.live.com',
       :port                 => 25,
       :domain               => 'hotmail.com',
-      :user_name            => ENV["HOTMAIL_USERNAME"],
-      :password             => ENV["HOTMAIL_PASSWORD"],
+      :user_name            => 'pinterested-like@hotmail.com',
+      :password             => 'pinterested',
       :authentication       => 'login',
       :enable_starttls_auto => true
   }
