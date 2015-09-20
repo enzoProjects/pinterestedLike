@@ -1,7 +1,6 @@
 class Pin < ActiveRecord::Base
    belongs_to :user
    acts_as_votable
-
    has_attached_file :image,
                      :style => { :medium => "300x300>", :thumb => "100x100>" },
                      :storage => :s3,
@@ -12,7 +11,8 @@ class Pin < ActiveRecord::Base
                      },
                      :s3_permissions => 'private',
                      :url => ":s3_domain_url"
-   validates :image, presence: true
-   validates :description, presence: true
-  end
+   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+
+
+end
 
