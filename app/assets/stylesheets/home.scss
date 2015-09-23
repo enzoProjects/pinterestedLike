@@ -21,7 +21,7 @@
   vertical-align: baseline;
   box-sizing: border-box;
   display: block;
-  background: transparent url("road.jpg") no-repeat fixed center center / cover;
+  background: transparent image-url("road.jpg") no-repeat fixed center center / cover;
 }
 .section-2
 {
@@ -32,7 +32,7 @@
   vertical-align: baseline;
   box-sizing: border-box;
   display: block;
-  background: #F5F5F5 url("grey.png") repeat scroll 0% 0%;
+  background: #F5F5F5 image-url("grey.png") repeat scroll 0% 0%;
 }
 
 #github
