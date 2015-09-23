@@ -20,7 +20,34 @@
     <%=image_tag("mifoto.jpg",size:"500x300") %>
   </div>
 </div>
+<div class="row">
+  <div class="col-md-4">
 
+  </div>
+
+
+</div>
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-5">
+      <script src="https://maps.googleapis.com/maps/api/js"></script>
+      <script>
+          function initialize() {
+              var mapCanvas = document.getElementById('map');
+              var mapOptions = {
+                  center: new google.maps.LatLng(-34.5136029,-58.5529361),
+                  zoom: 10,
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+              }
+              var map = new google.maps.Map(mapCanvas, mapOptions)
+          }
+          google.maps.event.addDomListener(window, 'load', initialize);
+      </script>
+    <div id="map"></div>
+
+  </div>
+  <div class="col-md-3"></div>
+</div>
 
 
 

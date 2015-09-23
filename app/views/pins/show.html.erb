@@ -10,7 +10,16 @@
            <div class="panel-body">
 
                <%= @pin.description %><br/>
-
+             <h3>Comments</h3>
+             <% @comments.each do |comment| %>
+                 <div>
+                   <strong><%= comment.user_name %></strong>
+                   <br />
+                   <p><%= comment.body %></p>
+                   <p><%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+                 </div>
+             <% end %>
+             <%= render 'comments/form' %>
              <% if @pin.user == current_user %>
 
                      <%= link_to 'Edit', edit_pin_path(@pin) %>
