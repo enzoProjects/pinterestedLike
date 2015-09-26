@@ -9,7 +9,7 @@ gem 'rails', '4.2.4'
 #subir imagenes en s3 amazon
 gem 'aws-sdk', '~> 1.60.2'
 
-
+gem 'gmaps4rails'
 
 
 # database for heroku or pc
